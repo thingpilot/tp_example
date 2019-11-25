@@ -1,4 +1,8 @@
-## Thingpilot LoRa template
+## Thingpilot blank example program
+**v0.2.0** *25/11/2019*
+
+ - Include scheduler array in main.cpp 
+
 **v0.1.0** *25/11/2019*
 
  - Derive NodeFlow class in main.cpp and provide templates to override functions 
