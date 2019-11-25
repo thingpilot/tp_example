@@ -35,6 +35,11 @@ class MyApp: public NodeFlow
         uint8_t* HandlePeriodic(uint16_t &length);
 };
 
+/**Reading specific times of the day.
+ * Values from 0-23.59 where 0 value is exact midnight. Format HH.MM
+ */ 
+float scheduler[11]={11.47,11.48,11.49,11.50,11.52,12.18,12.20,13.22,13.25,13.27,13.30}; 
+
 int MyApp::setup()
 {
     /* Do user HW-specific setup here, i.e. Arduino Setup function 
