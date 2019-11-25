@@ -1,0 +1,17 @@
+{
+    "target_overrides": {
+        "*": {
+            "platform.stdio-convert-newlines": true,
+            "lora.over-the-air-activation":false,
+            "lora.duty-cycle-on": false,
+            "lora.phy": "EU868",
+            "lora.public-network":true,     
+            "lora.device-address": "0x1234ABCD", 
+            "lora.nwkskey": "{ 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF, 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF, 0xAA, 0xBB, 0xCC, 0xDD }", 
+            "lora.appskey": "{ 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF, 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF, 0xAA, 0xBB, 0xCC, 0xDD }"
+        }
+    },
+    "macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_lora_config.h\""]
+}
+    
+    
