@@ -1,4 +1,8 @@
 ## Thingpilot blank example program
+**v0.3.0** *25/11/2019*
+
+ - Use version of [node flow](https://github.com/thingpilot/node_flow) that includes all required drivers for all targets
+
 **v0.2.0** *25/11/2019*
 
  - Include scheduler array in main.cpp 
