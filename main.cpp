@@ -1,6 +1,6 @@
 /**
   * @file    main.cpp
-  * @version 0.2.0
+  * @version 0.3.0
   * @author  Adam Mitchell
   * @brief   Main file for use with Thingpilot node core devices
   */
