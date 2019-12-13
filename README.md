@@ -1,4 +1,12 @@
+
 ## Thingpilot blank example program
+**v0.4.0** *13/12/2019*
+- Updated example the user can use the following from Nodeflow.h
+- start() drives all the application. It handles the different modem and configuration.
+- add_record"<DataType>"(data) for adding variable type records to eeprom
+- increment(i) Increment with a value i.
+- read_increment(&increment_value) Read current increment value.
+
 **v0.3.0** *25/11/2019*
 
  - Use version of [node flow](https://github.com/thingpilot/node_flow) that includes all required drivers for all targets

@@ -1,74 +1,69 @@
 /**
-  * @file    main.cpp
-  * @version 0.3.0
-  * @author  Adam Mitchell
-  * @brief   Main file for use with Thingpilot node core devices
-  */
+*******************************************************************************************
+*                               __|__       
+*                        --@--@--(_)--@--@--                 
+* @file    main.cpp
+* @version 0.1.0
+* @author  A Fab User 
+* @brief   This sketch demonstrates how to measure and send data with the ThingPilot module
+*         
+*          A) TARGET: TP_WRIGHT_V1_0_0 for NB-IOT || TP_EARHART_V1_0_0 for LoRaWan
+*          B) For Earhart: It uses ABP to send data to the ttn network. 
+*             All keys have to be specified in the mbed_lib.json in big endian byte order
+* 
+*******************************************************************************************
+**/
 
-/** Includes
+/** Includes 
  */
-#include <mbed.h>
-#include "node_flow.h"
+#include "ThingPilot.h"
 
-/** NodeFlow defines three pure virtual functions that the user must override
- *  in order to incorporate user-application/hardware-specific tasks. This override
- *  is done by defining a class that is derived from NodeFlow and overriding the 
- *  functions within this class
- */
-class MyApp: public NodeFlow 
-{
-    public:
+ThingPilot myapp;
+Serial pc(TP_PC_TXU,TP_PC_RXU);
 
-        /** Used to handle one-time setup of a peripheral, such as configuring
-         *  an accelerometer interrupt
-         */
-        int setup();
+float scheduler[4]={0,0,0,0};
 
-        /** Used to define exactly what should happen when the device wakes
-         *  from an external interrupt
-         */
-        int HandleInterrupt();
+/**Uncomment if using the scheduler and DEFINE SCHEDULER TRUE on config_device.h*/
+// float schedulerA[NUMBER_OF_TIMES]={HH.MM,HH.MM};
+// float schedulerB[1]={HH.MM};
+// float schedulerC[1]={HH.MM};
+// float schedulerD[1]={HH.MM};
 
-        /** Used to define exactly what should happen when the device wakes
-         *  for a periodic task, i.e. reading a temperature sensor
-         */
-        uint8_t* HandlePeriodic(uint16_t &length);
-};
+/*Uncomment if using NB-IOT */
+//float nbiot_send_scheduler[2]={HH.MM,HH.MM};
 
-/**Reading specific times of the day.
- * Values from 0-23.59 where 0 value is exact midnight. Format HH.MM
- */ 
-float scheduler[11]={11.47,11.48,11.49,11.50,11.52,12.18,12.20,13.22,13.25,13.27,13.30}; 
-
-int MyApp::setup()
-{
-    /* Do user HW-specific setup here, i.e. Arduino Setup function 
-     */
-    return 0;
+void ThingPilot::setup(){
+    // put your setup code here, to run once:
 }
 
-uint8_t* MyApp::HandlePeriodic(uint16_t &length)
-{
-    /* Handle period sensor readings here 
-     */
-    uint8_t payload[8];
-    return payload;  
-}
-
-int MyApp::HandleInterrupt()
-{
-    /** Handle interrupts here 
-     */
-    return 0;
-}
-
-/** Instantiate a MyApp object
- */
-MyApp myapp;
-
-
-int main()
-{
+int main(){ 
     myapp.start();
 }
+
+void ThingPilot::HandleInterrupt(){
+     // Handle interrupts here 
+}
+
+/**MetricGroupA for handling either scheduled times(SCHEDULED TRUE in the config_device.h) 
+  * or a constant periodic time (SCHEDULED FALSE & SIZE 1) for all sensors 
+  * To use the other metric groups the user has to define SCHEDULED FALSE && the SIZE 2 for MetricGroupA && MetricGroupB 
+  * 
+  */
+void ThingPilot::MetricGroupA(){
+
+}
+
+void ThingPilot::MetricGroupB(){
+    
+}
+
+void ThingPilot::MetricGroupC(){
+   
+}
+void ThingPilot::MetricGroupD(){
+  
+}
+
+
+
 
