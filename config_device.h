@@ -1,8 +1,7 @@
 /**
   * @file    config_device.h
   * @version 0.1.0
-  * @author  Rafaella Neofytou, Adam Mitchell
-  * @brief   
+  * @brief   Configuration file
   */
 
 /** Define to prevent recursive inclusion
@@ -10,6 +9,8 @@
 #pragma once
 #include "mbed.h"
 
+/** Define to prevent recursive inclusion
+ */
 #define app_id "MyEnvApp"
 #define dev_id "hms_002"
 
@@ -51,5 +52,4 @@
 #if !defined(INTERRUPT_DELAY)
     #define INTERRUPT_DELAY 120
 #endif
-
 
