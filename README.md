@@ -1,4 +1,17 @@
 ## Thingpilot blank example program
+
+**v0.4.0** *31/01/2019*
+- Added a credentials.h file if enabled the user will manually provide the credentials
+- The maximum transmitted bytes for lora is now 255 instead of 64. to change the max size 
+  the user will have to change it from the mbed_app.json file -> lora.tx-max-size":255
+- Updated to the latest nodeflow v0.4.0
+- Tested with mbed-os up to 5.15.0
+- Updated example the user can use the following from Nodeflow.h
+- start() drives all the application. It handles the different modem and configuration.
+- add_record"<DataType>"(data) for adding variable type records to eeprom
+- increment(i) Increment with a value i.
+- read_increment(&increment_value) Read current increment value.
+
 **v0.3.0** *25/11/2019*
 
  - Use version of [node flow](https://github.com/thingpilot/node_flow) that includes all required drivers for all targets
