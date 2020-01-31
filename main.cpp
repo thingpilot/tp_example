@@ -17,31 +17,33 @@
 /** Includes 
  */
 #include "ThingPilot.h"
-
 ThingPilot myapp;
-Serial pc(TP_PC_TXU,TP_PC_RXU);
 
-float scheduler[4]={0,0,0,0};
+
+float scheduler[METRIC_GROUPS_ON]={60};
 
 /**Uncomment if using the scheduler and DEFINE SCHEDULER TRUE on config_device.h*/
-// float schedulerA[NUMBER_OF_TIMES]={HH.MM,HH.MM};
+// float schedulerA[NUMBER_OF_TIMES]={HH.MM, HH.MM,HH.MM};
 // float schedulerB[1]={HH.MM};
 // float schedulerC[1]={HH.MM};
 // float schedulerD[1]={HH.MM};
 
-/*Uncomment if using NB-IOT */
-//float nbiot_send_scheduler[2]={HH.MM,HH.MM};
+/*Uncomment if using NB-IOT or LORA with scheduler*/
+//float send_scheduler[10]={11,11.55,12.22,12.56,13.25,13.3,14,14.3,16,15.45};
 
-void ThingPilot::setup(){
-    // put your setup code here, to run once:
+void ThingPilot::setup()
+{
 }
 
-int main(){ 
+int main()
+{ 
     myapp.start();
 }
 
-void ThingPilot::HandleInterrupt(){
-     // Handle interrupts here 
+void ThingPilot::HandleInterrupt()
+{
+    // Handle interrupts here 
+    debug("Heyy interrupt\n");
 }
 
 /**MetricGroupA for handling either scheduled times(SCHEDULED TRUE in the config_device.h) 
@@ -49,19 +51,23 @@ void ThingPilot::HandleInterrupt(){
   * To use the other metric groups the user has to define SCHEDULED FALSE && the SIZE 2 for MetricGroupA && MetricGroupB 
   * 
   */
-void ThingPilot::MetricGroupA(){
-
-}
-
-void ThingPilot::MetricGroupB(){
-    
-}
-
-void ThingPilot::MetricGroupC(){
-   
-}
-void ThingPilot::MetricGroupD(){
+void ThingPilot::MetricGroupA()
+{
   
+}
+
+void ThingPilot::MetricGroupB()
+{
+  
+}
+
+void ThingPilot::MetricGroupC()
+{
+  
+}
+void ThingPilot::MetricGroupD()
+{
+   
 }
 
 

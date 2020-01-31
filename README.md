@@ -1,5 +1,12 @@
 
 ## Thingpilot blank example program
+**v0.5.0** *31/01/2019*
+- Added a credentials.h file if enabled the user will manually provide the credentials
+- The maximum transmitted bytes for lora is now 255 instead of 64. to change the max size 
+  the user will have to change it from the mbed_app.json file -> lora.tx-max-size":255
+- Updated to the latest nodeflow v0.4.0
+- Tested with mbed-os up to 5.15.0
+
 **v0.4.0** *13/12/2019*
 - Updated example the user can use the following from Nodeflow.h
 - start() drives all the application. It handles the different modem and configuration.
