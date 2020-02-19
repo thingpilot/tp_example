@@ -6,3 +6,12 @@ mbed-os
 BUILD
 
 node_flow
+node_flow/mbed-semtech-lora-rf-drivers
+node_flow/node_core_data_manager
+node_flow/sara_n2_driver
+node_flow/stm24256_eeprom_driver
+node_flow/thingpilot_nbiot
+node_flow/thingpilot_semtech_lora
+node_flow/thingpilot_telemetry_formatter
+node_flow/tpl5010_watchdog_driver
+node_flow/tp_sleep_manager
