@@ -29,10 +29,11 @@ float scheduler[METRIC_GROUPS_ON]={60};
 // float schedulerD[1]={HH.MM};
 
 /*Uncomment if using NB-IOT or LORA with scheduler*/
-//float send_scheduler[10]={11,11.55,12.22,12.56,13.25,13.3,14,14.3,16,15.45};
+float send_scheduler[10]={11,11.55,12.22,12.56,13.25,13.3,14,14.3,16,15.45};
 
 void ThingPilot::setup()
 {
+    set_time(39600);
 }
 
 int main()
@@ -54,6 +55,7 @@ void ThingPilot::HandleInterrupt()
   */
 void ThingPilot::MetricGroupA()
 {
+    add_record<uint8_t>(100);
   
 }
 
